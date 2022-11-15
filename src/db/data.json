@@ -1,8 +1,29 @@
 {
   "days": [
-    { "id": 1, "day": 1 },
-    { "id": 2, "day": 2 },
-    { "id": 3, "day": 3 }
+    {
+      "id": 1,
+      "day": 1
+    },
+    {
+      "id": 2,
+      "day": 2
+    },
+    {
+      "id": 3,
+      "day": 3
+    },
+    {
+      "day": 4,
+      "id": 4
+    },
+    {
+      "day": 5,
+      "id": 5
+    },
+    {
+      "day": 6,
+      "id": 6
+    }
   ],
   "words": [
     {
@@ -46,6 +67,69 @@
       "eng": "pencil",
       "kor": "연필",
       "isDone": false
+    },
+    {
+      "kor": "컴퓨터",
+      "eng": "computer",
+      "day": "3",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "kor": "음식",
+      "eng": "food",
+      "day": "1",
+      "isDone": false,
+      "id": 8
+    },
+    {
+      "kor": "바나나",
+      "eng": "banana",
+      "day": "1",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "kor": "노트",
+      "eng": "note",
+      "day": "2",
+      "isDone": false,
+      "id": 10
+    },
+    {
+      "kor": "커피",
+      "eng": "coffee",
+      "day": "1",
+      "isDone": false,
+      "id": 11
+    },
+    {
+      "kor": "쥐",
+      "eng": "mouse",
+      "day": "2",
+      "isDone": false,
+      "id": 12
+    },
+    {
+      "kor": "물",
+      "eng": "water",
+      "day": "1",
+      "isDone": false,
+      "id": 13
+    },
+    {
+      "kor": "불",
+      "eng": "fire",
+      "day": "3",
+      "isDone": false,
+      "id": 14
+    },
+    {
+      "kor": "뿌리",
+      "eng": "root",
+      "day": "6",
+      "isDone": false,
+      "id": 15
     }
   ]
 }
