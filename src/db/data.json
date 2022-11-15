@@ -23,6 +23,10 @@
     {
       "day": 6,
       "id": 6
+    },
+    {
+      "day": 7,
+      "id": 7
     }
   ],
   "words": [
@@ -144,6 +148,20 @@
       "day": "5",
       "isDone": false,
       "id": 17
+    },
+    {
+      "kor": "병",
+      "eng": "bottle",
+      "day": "5",
+      "isDone": false,
+      "id": 18
+    },
+    {
+      "kor": "손",
+      "eng": "hand",
+      "day": "7",
+      "isDone": false,
+      "id": 19
     }
   ]
 }
