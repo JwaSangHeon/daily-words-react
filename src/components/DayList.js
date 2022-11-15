@@ -1,17 +1,9 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 const DayList = () => {
-  const [days, setDays] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get("http://localhost:3001/days");
-      setDays(data);
-    };
-    fetchData();
-  }, []);
+  const days = useFetch("http://localhost:3001/days");
 
   return (
     <ul className="list_day">

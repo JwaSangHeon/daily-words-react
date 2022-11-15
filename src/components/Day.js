@@ -1,20 +1,13 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 import Word from "./Word";
 
 const Day = () => {
   const { day } = useParams();
-  const [wordList, setWordList] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get("http://localhost:3001/words");
-      setWordList(data.filter((word) => word.day === Number(day)));
-    };
-    fetchData();
-  }, [day]);
+  const wordList = useFetch(`http://localhost:3001/words?day=${day}`);
 
   return (
     <>
