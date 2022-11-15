@@ -12,6 +12,7 @@ const Day = () => {
   return (
     <>
       <h2>Day {day}</h2>
+      {wordList.length === 0 && <span>loading....</span>}
       <table>
         <tbody>
           {wordList.map((word) => (

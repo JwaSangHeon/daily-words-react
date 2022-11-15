@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import { useNavigate } from "react-router";
 
 const CreateWord = () => {
   const days = useFetch("http://localhost:3001/days");
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const engRef = useRef(null);
   const korRef = useRef(null);
@@ -12,23 +13,27 @@ const CreateWord = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3001/words/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        kor: korRef.current.value,
-        eng: engRef.current.value,
-        day: dayRef.current.value,
-        isDone: false,
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        alert("생성이 완료 되었습니다.");
-        navigate(`/day/${dayRef.current.value}`);
-      }
-    });
+    if (!isLoading) {
+      setIsLoading(true);
+      fetch(`http://localhost:3001/words/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          kor: korRef.current.value,
+          eng: engRef.current.value,
+          day: dayRef.current.value,
+          isDone: false,
+        }),
+      }).then((res) => {
+        if (res.ok) {
+          alert("생성이 완료 되었습니다.");
+          navigate(`/day/${dayRef.current.value}`);
+          setIsLoading(false);
+        }
+      });
+    }
   };
 
   return (
@@ -51,7 +56,9 @@ const CreateWord = () => {
           ))}
         </select>
       </div>
-      <button>저장</button>
+      <button style={{ opacity: isLoading ? 0.3 : 1 }}>
+        {isLoading ? "저장중..." : "저장"}
+      </button>
     </form>
   );
 };

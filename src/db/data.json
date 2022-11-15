@@ -130,6 +130,20 @@
       "day": "6",
       "isDone": false,
       "id": 15
+    },
+    {
+      "kor": "피자",
+      "eng": "pizza",
+      "day": "4",
+      "isDone": false,
+      "id": 16
+    },
+    {
+      "kor": "컵",
+      "eng": "cup",
+      "day": "5",
+      "isDone": false,
+      "id": 17
     }
   ]
 }
