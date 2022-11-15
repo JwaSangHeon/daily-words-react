@@ -1,11 +1,21 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Dummy from "../db/data.json";
 
 const DayList = () => {
+  const [days, setDays] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get("http://localhost:3001/days");
+      setDays(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <ul className="list_day">
-      {Dummy.days.map((day) => (
+      {days.map((day) => (
         <li key={day.id}>
           <Link to={`/day/${day.day}`}>Day {day.day}</Link>
         </li>
